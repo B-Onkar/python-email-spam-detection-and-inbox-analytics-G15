@@ -67,6 +67,7 @@ Accuracy on the generated dataset: **88%** (see the terminal output / screenshot
 ## Screenshots
 ![run1](screenshots/run1.png)
 ![run2](screenshots/run2.png)
+![run3](screenshots/run3.png)
 
 ## Resume Bullet
 Built a rule-based email spam detector in Python that extracts text features with regex and
