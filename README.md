@@ -3,7 +3,7 @@
 **Python PG Group Project - Project P23 - Group G15**
 
 **Members:**
-FM1103: Eshan Metwate, FM1104
+FM1103: Eshan Metwate, FM1104: Onkar Bandichhode
 
 ## Problem Statement
 Email users lose time to spam and phishing messages. This project builds a **rule-based** spam
