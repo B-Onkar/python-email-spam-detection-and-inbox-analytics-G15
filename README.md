@@ -1,7 +1,9 @@
 # Email Spam Detection & Inbox Analytics (Rule-Based)
 
 **Python PG Group Project - Project P23 - Group G15**
-**Members:** FM1103, FM1104
+
+**Members:**
+FM1103: Eshan Metwate, FM1104
 
 ## Problem Statement
 Email users lose time to spam and phishing messages. This project builds a **rule-based** spam
