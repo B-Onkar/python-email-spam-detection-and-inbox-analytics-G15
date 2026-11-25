@@ -1,0 +1,92 @@
+
+============================================================
+STEP 1: Generating synthetic dataset
+============================================================
+Generated 3090 emails -> /home/claude/python-email-spam-G15/data/emails.csv
+
+============================================================
+STEP 2: Cleaning data
+============================================================
+  raw_rows                : 3090
+  duplicates_removed      : 90
+  missing_dates_dropped   : 70
+  missing_subject         : 133
+  missing_body            : 94
+  invalid_senders         : 244
+  clean_rows              : 2930
+
+============================================================
+STEP 3: Feature extraction & rule-based scoring
+============================================================
+  Rule weights: {'urgent_words': 1.5, 'suspicious_domain': 3.0, 'money_amount': 0.4, 'all_caps': 0.5, 'exclamations': 0.4, 'invalid_sender': 0.8, 'links': 0.5, 'promo_words': 0.8}
+  Thresholds  : promotion >= 1.6, spam >= 5.5
+
+============================================================
+STEP 4: Evaluation against the 'label' column
+============================================================
+  ACCURACY: 88.09%  on 2930 emails
+
+  Confusion matrix (rows = true, cols = predicted)
+            ham  promotion  spam
+ham        1203         83     0
+promotion    20        586   148
+spam          0         98   792
+
+============================================================
+STEP 5: Inbox analytics
+============================================================
+
+Score statistics (NumPy):
+  mean   : 4.19
+  median : 2.90
+  std    : 4.36
+  p25    : 0.40
+  p75    : 6.60
+  p90    : 11.70
+  max    : 15.60
+
+Top sender domains and spam %:
+                       emails  spam_emails  spam_pct
+sender_domain                                       
+gmail.com                 299           92      30.8
+invalid                   244          154      63.1
+college.edu               218            0       0.0
+iimu.ac.in                218            0       0.0
+outlook.com               199            0       0.0
+company.com               198            0       0.0
+yahoo.com                 194            0       0.0
+shopzone.com              144           24      16.7
+bank-secure-login.top     120          108      90.0
+offers.flipkart.com       112           26      23.2
+
+Predicted label by day of week (pivot table):
+predicted  ham  promotion  spam
+day                            
+Monday     165         96   147
+Tuesday    199        118   131
+Wednesday  179        103   122
+Thursday   166        109   154
+Friday     196        101   111
+Saturday   166        121   142
+Sunday     152        119   133
+
+Predicted label by time of day:
+predicted          ham  promotion  spam
+hour                                   
+Night (0-5)        296        203   246
+Morning (6-11)     304        187   232
+Afternoon (12-17)  300        182   220
+Evening (18-23)    323        195   242
+
+Top spam keywords (Counter): [('verify', 740), ('free', 601), ('click', 430), ('account', 410), ('bank', 368), ('urgent', 322), ('win', 255), ('gift', 220), ('claim', 217), ('offer', 216)]
+
+============================================================
+STEP 6: Saving charts and cleaned data
+============================================================
+  saved outputs/01_spam_vs_ham_pie.png
+  saved outputs/02_top_spam_keywords.png
+  saved outputs/03_spam_score_histogram.png
+  saved outputs/04_spam_by_hour.png
+  saved outputs/cleaned_emails.csv
+
+Done. Final accuracy: 88.09%
